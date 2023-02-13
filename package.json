@@ -1,11 +1,11 @@
 {
-  "name": "tailwind-react-chrome-extension-template",
-  "version": "4.3.5",
+  "name": "leetcodemaster",
+  "version": "1.0.0",
   "description": "A chrome extension boilerplate built with Tailwind 3, React 17, Webpack 5, and Webpack Dev Server 4",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yewsiang/tailwind-react-chrome-extension-template.git"
+    "url": "https://github.com/nitro603/LeetcodeMaster.git"
   },
   "scripts": {
     "build": "node utils/build.js",
