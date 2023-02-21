@@ -1,4 +1,4 @@
-<img src="src/assets/img/LeetcodeMasterIcon.png" width="120"/>
+<img src="src/assets/img/LeetcodeMasterIcon.png" width="190"/>
 
 # Tailwind React Chrome Extension Template (Tailwind 3, React 17 and Webpack 5)
 
