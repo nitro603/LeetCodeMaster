@@ -1,24 +1,11 @@
 import React from 'react';
-import logo from '../../assets/img/logo.svg';
-import './Newtab.css';
+import NeverGiveUP from '../../assets/img/nvgup.gif';
 
 const Newtab = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/pages/Newtab/Newtab.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
-        <h6 className="text-red-500">The color of this paragraph is defined using Tailwind.</h6>
+        <img src={NeverGiveUP}/>
       </header>
     </div>
   );

@@ -40,12 +40,10 @@ var options = {
     options: path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
     background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
-    devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
-    panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
+    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js')
   },
   chromeExtensionBoilerplate: {
-    notHotReload: ['background', 'contentScript', 'devtools'],
+    notHotReload: ['background', 'contentScript'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -142,7 +140,7 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/img/icon-128.png',
+          from: 'src/assets/img/LCMicon.png',
           to: path.join(__dirname, 'build'),
           force: true,
         },
@@ -151,7 +149,7 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/img/icon-34.png',
+          from: 'src/assets/img/LCMicon.png',
           to: path.join(__dirname, 'build'),
           force: true,
         },
@@ -173,18 +171,6 @@ var options = {
       template: path.join(__dirname, 'src', 'pages', 'Popup', 'index.html'),
       filename: 'popup.html',
       chunks: ['popup'],
-      cache: false,
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.html'),
-      filename: 'devtools.html',
-      chunks: ['devtools'],
-      cache: false,
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'Panel', 'index.html'),
-      filename: 'panel.html',
-      chunks: ['panel'],
       cache: false,
     }),
   ],
