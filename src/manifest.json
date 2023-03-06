@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
   "name": "LeetcodeMaster",
-  "description": "A chrome extension that helps people practice technical interview questions through Leetcode",
+  "description": "Review Leetcode solutions in video or written format a click away",
   "options_page": "options.html",
-  "background": { "service_worker": "background.bundle.js" },
+  "background": { 
+    "service_worker": "background.bundle.js" 
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "LCMicon.png"
@@ -16,14 +18,20 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "js": ["contentScript.bundle.js"],
-      "css": ["content.styles.css"]
+      "matches": [
+        "https://leetcode.com/problems/*"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "LCMicon.png"],
+      "resources": ["content.styles.css", "LCMicon.png", "panel.js"],
       "matches": []
     }
   ]
