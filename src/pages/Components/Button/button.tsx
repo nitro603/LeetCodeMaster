@@ -2,15 +2,13 @@ import React from "react";
 
 type Props = {
     solutionType:string,
-    color:string
+    button:()=>{}
 }
 
-const handleClick = () => {
-        console.log('this is:',);
-      };
 
-const SolutionButton = ({solutionType, color}:Props) => {
-      return <button className="h-10 w-16 bg-gray-400" onClick={handleClick}>
+const SolutionButton = ({solutionType, button}:Props) => {
+
+      return <button className="h-10 w-16 bg-gray-400" onClick={button}>
             <div>&lt;{solutionType}/&gt;</div>
         </button>
 }
