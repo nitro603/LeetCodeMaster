@@ -15,6 +15,6 @@
     "noEmit": false,
     "jsx": "react"
   },
-  "include": ["src"],
+  "include": ["src", "src/pages/Components/Interface/.Itemsts"],
   "exclude": ["build", "node_modules"]
 }
