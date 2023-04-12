@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { YoutubeItem} from './YoutubeItem';
 
+
 type Props = {
     solutionType:number,
 }
@@ -9,6 +10,7 @@ type Props = {
 const UserInterface = ({solutionType}:Props) => {
     const[loading,setLoading]=useState(true)
     const[data,setData]=useState<YoutubeItem[]>([])
+    const[text,setText]=useState()
 
     useEffect(() => {
         async function getItems(){
@@ -23,6 +25,24 @@ const UserInterface = ({solutionType}:Props) => {
             return listItems
         }
         getItems().then(res => setData(res))
+        
+        
+        async function getCompletion() {
+            const { Configuration, OpenAIApi } = require("openai");
+            const configuration = new Configuration({
+                apiKey: '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',
+            });
+            const openai = new OpenAIApi(configuration);
+            const response = await openai.createCompletion({
+                model: "text-davinci-003",
+                prompt: "Create atleast 1 code solution to the missing number problem on leetcode. Make sure to add an explanation to each",
+                max_tokens: 700,
+                temperature: 0,
+            });
+            return response.data.choices[0].text
+        }
+        
+        getCompletion().then(res => setText(res))
         setLoading(false)
     }, [])
     if (loading){
@@ -37,21 +57,21 @@ const UserInterface = ({solutionType}:Props) => {
     const CardListItem = (props: YoutubeItem) => {
         const item = props;
         return (
-          <li>
-                <div className='flex justify-center m-auto' onClick={()=> handleClick(props)}>
-                    <div className='flex'>
-                        <img src ={props.pictureURL} className='w-[60px] h-[40px]'></img>
-                    </div>
-                    <div className="w-[350px] h-[40px] bg-slate-700 flex-nowrap truncate break-words hover:bg-yellow-600">
-                        <div className='pl-1'>
-                            <p>
-                            <strong>{item.channelTitle}</strong>
-                            </p>
-                            <p>{item.description}</p>
-                        </div>
+        <li>
+            <div className='flex justify-center m-auto' onClick={()=> handleClick(props)}>
+                <div className='flex'>
+                    <img src ={props.pictureURL} className='w-[60px] h-[40px]'></img>
+                </div>
+                <div className="w-[350px] h-[40px] bg-slate-700 flex-nowrap truncate break-words hover:bg-yellow-600">
+                    <div className='pl-1'>
+                        <p>
+                        <strong>{item.channelTitle}</strong>
+                        </p>
+                        <p>{item.description}</p>
                     </div>
                 </div>
-          </li>
+            </div>
+        </li>
         );
       };
       
@@ -79,9 +99,13 @@ const UserInterface = ({solutionType}:Props) => {
 
     }else{
     //display written Solution grabbed from chatGPT
+    console.log(text)
         return (
-            <div className='w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
-                <p>written</p>
+            <div className='flex w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black place-items-center'>
+                <div className='flex w-[450px] h-[380px] bg-slate-700 whitespace-pre-wrap'>
+                    <p>{text}</p>
+                </div>
+                
             </div>
 
         );
