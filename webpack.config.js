@@ -6,7 +6,7 @@ var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin');
 var { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const Dotenv = require("dotenv-webpack");
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 var alias = {
@@ -109,6 +109,7 @@ var options = {
     new webpack.ProgressPlugin(),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(['NODE_ENV']),
+    new Dotenv({systemvars: true,}),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -140,7 +141,7 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/img/LCMicon.png',
+          from: 'src/assets/img/leetMate_logo.png',
           to: path.join(__dirname, 'build'),
           force: true,
         },
