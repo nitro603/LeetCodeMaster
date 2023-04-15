@@ -11,10 +11,10 @@ const UserInterface = ({solutionType}:Props) => {
     const[loading,setLoading]=useState(true)
     const[data,setData]=useState<YoutubeItem[]>([])
     const[text,setText]=useState()
-
+    console.log(process.env.YOUTUBE)
     useEffect(() => {
         async function getItems(){
-            const response = axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&q=Missing Number Leetcode&key=AIzaSyCngzeN1kuMdyNlH72i_9mlaeLglCjIbT8&type=video&maxResults=5')
+            const response = axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=Missing Number Leetcode&key=${process.env.YOUTUBE}&type=video&maxResults=5`)
             const items = (await response).data.items
 
             let listItems = []                
@@ -30,7 +30,7 @@ const UserInterface = ({solutionType}:Props) => {
         async function getCompletion() {
             const { Configuration, OpenAIApi } = require("openai");
             const configuration = new Configuration({
-                apiKey: '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',
+                apiKey: `sk-${process.env.CHATGPT}`,
             });
             const openai = new OpenAIApi(configuration);
             const response = await openai.createCompletion({
