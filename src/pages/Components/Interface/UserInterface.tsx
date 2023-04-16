@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { YoutubeItem} from './YoutubeItem';
+import TopSection from '../Header/TopSection';
 
 
 type Props = {
@@ -90,6 +91,7 @@ const UserInterface = ({solutionType}:Props) => {
     //Display video solutions
         return (
             <div className='w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
+                <TopSection></TopSection>
                 <div>
                     <CardList/>
                 </div>
@@ -102,6 +104,7 @@ const UserInterface = ({solutionType}:Props) => {
     console.log(text)
         return (
             <div className='flex w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black place-items-center'>
+                <TopSection></TopSection>
                 <div className='flex w-[450px] h-[380px] bg-slate-700 whitespace-pre-wrap'>
                     <p>{text}</p>
                 </div>

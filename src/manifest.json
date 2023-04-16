@@ -31,7 +31,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "LCMicon.png", "panel.js"],
+      "resources": ["content.styles.css", "LCMicon.png","panel.js"],
       "matches": []
     }
   ]
