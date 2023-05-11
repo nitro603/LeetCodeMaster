@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "LeetcodeMaster",
+  "name": "LeetMate",
   "description": "Review Leetcode solutions in video or written format a click away",
   "options_page": "options.html",
   "background": { 
@@ -34,5 +34,9 @@
       "resources": ["content.styles.css", "LCMicon.png","panel.js"],
       "matches": []
     }
+  ],
+  "permissions": [
+      "tabs",
+      "activeTab"
   ]
 }
