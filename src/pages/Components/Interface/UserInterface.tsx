@@ -99,9 +99,9 @@ const UserInterface = ({solutionType,problem}:Props) => {
         )
     }else{
         return (
-            <div className='flex w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black place-items-center'>
+            <div className='flex-col w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
                 <TopSection problem={problem}></TopSection>
-                <div className='flex w-[450px] h-[380px] bg-slate-700 whitespace-pre-wrap'>
+                <div className='flex w-[450px] h-[380px] bg-slate-700 whitespace-pre-wrap flex-wrap overflow-auto'>
                     <p>{text}</p>
                 </div>
             </div>
