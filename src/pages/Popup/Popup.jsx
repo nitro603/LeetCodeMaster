@@ -49,7 +49,7 @@ const Popup = () => {
       return (
         <div className='flex-col w-64 h-56 border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
           <TopSection problem={problem()}></TopSection>
-          <div className='flex flex-col content-center justify-around flex-wrap gap-y-3	mt-5'>
+          <div className='flex flex-col content-center justify-around flex-wrap gap-y-3	mt-5 font-code'>
             <SolutionButton solutionType='Video' button={() => Expand(0)}/> 
             <SolutionButton solutionType='Written' button={() => Expand(1)}/>
           </div>

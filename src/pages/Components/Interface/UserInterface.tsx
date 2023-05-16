@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { YoutubeItem} from './YoutubeItem';
 import TopSection from '../Header/TopSection';
+import Scrollbars from 'react-custom-scrollbars-2';
 
 
 type Props = {
@@ -92,7 +93,7 @@ const UserInterface = ({solutionType,problem}:Props) => {
         return (
             <div className='w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
                 <TopSection problem={problem}></TopSection>
-                <div>
+                <div className='pt-8'>
                     <CardList/>
                 </div>
             </div>
@@ -101,8 +102,10 @@ const UserInterface = ({solutionType,problem}:Props) => {
         return (
             <div className='flex-col w-[550px] h-[420px] border-2 border-black bg-gradient-to-t from-gray-900 to-black'>
                 <TopSection problem={problem}></TopSection>
-                <div className='flex w-[450px] h-[380px] bg-slate-700 whitespace-pre-wrap flex-wrap overflow-auto'>
-                    <p>{text}</p>
+                <div className='flex w-[500px] h-[325px] mt-6 mx-auto bg-slate-300 whitespace-pre-wrap flex-wrap overflow-auto'>
+                    <Scrollbars style={{ width: 500, height: 325}}>
+                        <p className='font-code'>{text}</p>
+                    </Scrollbars>
                 </div>
             </div>
         )

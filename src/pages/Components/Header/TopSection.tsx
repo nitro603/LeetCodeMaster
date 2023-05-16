@@ -8,15 +8,15 @@ type Props = {
 const TopSection = ({problem}:Props) => {
     const width = () =>{
         if(problem.length >= 25){
-            return 'w-40 m-auto'
+            return 'w-60 pr-10'
         }else{
-            return 'w-20 m-auto'
+            return 'w-30 m-auto'
         }
     }
     return (
-        <div className='w-[150px] h-[30px] m-auto flex-col text-white pb-11'>
+        <div className='w-[120px] h-[30px] m-auto flex-col text-white pb-11 font-code text-xsm'>
             <img src={leetMate}></img>
-            <h3 className={width()}>{problem}</h3>
+            <p className={width()}>{problem}</p>
         </div>
     )    
 }
