@@ -3,35 +3,16 @@
   "name": "LeetMate",
   "description": "Review Leetcode solutions in video or written format a click away",
   "options_page": "options.html",
-  "background": { 
-    "service_worker": "background.bundle.js" 
-  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "LCMicon.png"
   },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
   "icons": {
     "128": "LCMicon.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://leetcode.com/problems/*"
-      ],
-      "js": [
-        "contentScript.bundle.js"
-      ],
-      "css": [
-        "content.styles.css"
-      ]
-    }
-  ],
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "LCMicon.png","panel.js"],
+      "resources": ["LCMicon.png","panel.js"],
       "matches": []
     }
   ],

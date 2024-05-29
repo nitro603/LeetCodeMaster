@@ -1,0 +1,9 @@
+05/29
+- Goals
+    * Be able to run leetmate [DONE]
+    * Update readme to show functionality/use cases
+    * Upload the project to chrome webstore, use openai to create webstore description
+    * Create seperate api to call the openai api.
+        (maybe make it so that if this question hasn't been called before it adds the text solution to a database for quicker retrieval)
+        hide the url for the api in the secrets.env.js file
+    * improve styling, the header is to close to the top
