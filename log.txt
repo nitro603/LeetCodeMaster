@@ -1,10 +1,12 @@
 05/29
 - Goals
     * Be able to run leetmate [DONE]
+    * remove red squiggles error
     * run with api functionality, securely with vault
     * Update readme to show functionality/use cases
     * Upload the project to chrome webstore, use openai to create webstore description
-    * Create seperate api to call the openai api.
+    * Create seperate api to use the youtube/openai apis
+        separate the proxy code in another project. Then add security rules that your API can only be called from your domain, and other measures to avoid denial of service attacks.
         (maybe make it so that if this question hasn't been called before it adds the text solution to a database for quicker retrieval)
         hide the url for the api in the secrets.env.js file
     * improve styling, the header is to close to the top
