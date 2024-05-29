@@ -1,6 +1,7 @@
 05/29
 - Goals
     * Be able to run leetmate [DONE]
+    * run with api functionality, securely with vault
     * Update readme to show functionality/use cases
     * Upload the project to chrome webstore, use openai to create webstore description
     * Create seperate api to call the openai api.
