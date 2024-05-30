@@ -10,3 +10,7 @@
         (maybe make it so that if this question hasn't been called before it adds the text solution to a database for quicker retrieval)
         hide the url for the api in the secrets.env.js file
     * improve styling, the header is to close to the top
+
+05/30
+- I have to get the readme to look good so I'll have to add images of me using the app in case they don't get to use it
+    (eventually I want to get it on the chrome store but only once the automatic database feature is complete)
