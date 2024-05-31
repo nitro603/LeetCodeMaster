@@ -19,33 +19,55 @@ const UserInterface = ({solutionType,problem}:Props) => {
         async function getItems(){
             const response = axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${problem} Leetcode&key=${process.env.YOUTUBE}&type=video&maxResults=5`)
             const items = (await response).data.items
-
+            console.log(items)
             let listItems = []                
             for (let i = 0; i < 5; i++) {
-                listItems[i] = new YoutubeItem(items[i].id.videoId.toString(), items[i].snippet.title.toString(),
-                items[i].snippet.thumbnails.medium.url.toString(), items[i].snippet.channelTitle.toString(), items[i].snippet.description.toString())
+                listItems.push(new YoutubeItem(
+            items[i].id.videoId.toString(),
+            items[i].snippet.title.toString(),
+            items[i].snippet.thumbnails.medium.url.toString(),
+            items[i].snippet.channelTitle.toString(),
+            items[i].snippet.description.toString()
+          ));
             }
             return listItems
         }
         getItems().then(res => setData(res))
         
         async function getCompletion() {
-            const { Configuration, OpenAIApi } = require("openai")
-            const configuration = new Configuration({
-                apiKey: `sk-${process.env.CHATGPT}`,
-            });
-            const openai = new OpenAIApi(configuration);
-            const response = await openai.createCompletion({
-                model: "text-davinci-003",
-                prompt: 'Create a code solution to the '+ problem + 'problem on leetcode. Make sure to add an explanation to the code',
-                max_tokens: 700,
-                temperature: 0,
-            });
-            return response.data.choices[0].text
-        }
         
-        getCompletion().then(res => setText(res))
-        setLoading(false)
+            const response = await axios.post('https://api.openai.com/v1/chat/completions',
+                {
+                    model: 'gpt-3.5-turbo', 
+                    messages: [
+                        {
+                            role: 'system',
+                            content: 'You are a helpful assistant.'
+                        },
+                        {
+                            role: 'user',
+                            content: `Create a code solution to the ${problem} problem on Leetcode. Make sure to add an explanation to the code.`
+                        }
+                    ],
+                    max_tokens: 700, 
+                    temperature: 0.7
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${process.env.CHATGPT}`,
+                        'Content-Type': 'application/json'
+                        }
+                }
+            );
+            
+    
+            const data = response.data.choices[0].message.content;
+            return data;
+        } 
+        
+        
+        getCompletion().then(res => setText(res));
+        setLoading(false);
     }, [])
 
     if (loading){

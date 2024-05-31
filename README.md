@@ -27,7 +27,7 @@
 
 ## Workflow
 
-
+<img src="src\assets\img\work1.JPG" width="190"/>
 ## Credits
 
 - Michael Xieyang Liu | [Website](https://lxieyang.github.io)
