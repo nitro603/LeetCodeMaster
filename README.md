@@ -36,6 +36,7 @@
 ### On the other hand you can also try a ChatGPT generated solution!
 <img src="src\assets\img\work4.JPG" width="250"/>
 <img src="src\assets\img\work5.JPG" width="250"/>
+
 ## Credits
 
 - Michael Xieyang Liu | [Website](https://lxieyang.github.io)
