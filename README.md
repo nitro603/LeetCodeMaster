@@ -29,7 +29,7 @@
 ### First select a problem to work on, in this example I'll do Zigzag Conversion
 <img src="src\assets\img\work1.JPG" width="250"/>
 
-### If you're stuck on a problem and none of the solutions on the site help, try a video solution!
+### If you're stuck on a problem, try a video solution!
 <img src="src\assets\img\work2.JPG" width="250"/>
 <img src="src\assets\img\work3.JPG" width="250"/>
 
