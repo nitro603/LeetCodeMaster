@@ -8,11 +8,9 @@
 
 1. Check if your [Node.js](https://nodejs.org/) version is >= **14**.
 2. Clone this repository.
-3. Change the package's `name`, `description`, and `repository` fields in `package.json`.
-4. Change the name of your extension on `src/manifest.json`.
-5. Run `npm install` to install the dependencies.
-6. Get a Youtube and Openai API key
-7. Set keys in a .env file
+3. Run `npm install` to install the dependencies.
+4. Get a Youtube and Openai API key
+5. Set keys in a .env file
     ```
     YOUTUBE= your_ytkey
     CHATGPT= your_gptkey
